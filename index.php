@@ -23,6 +23,7 @@ $rename = array();
 $rename['search'] = array('ä', 'ö', 'ü', 'ß', ' ');
 $rename['replace'] = array('ae', 'oe', 'ue', 'ss', '_');
 
+if(!file_exists($dirtooriginalzipfile)){ mkdir($dirtooriginalzipfile); }
 if(!file_exists($dirtoallpdf)){ mkdir($dirtoallpdf); }
 if(!file_exists($dirtofinalzip)){ mkdir($dirtofinalzip); }
 if(!file_exists($dirtotemppdffiles)){ mkdir($dirtotemppdffiles); }
