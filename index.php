@@ -217,11 +217,13 @@ if ($get_generate_category !== null) {
                                                         $i = 1;
                                                         $finaloutput .= '<table cellspacing="0" border="0" style="width: 100%; text-align: left;"><tr>';
                                                         foreach($images as $image){
-                                                            $finaloutput .= '<td style="width: 25%;"><img src="'.$dirtoalldata.'/'.$image.'" width="135" style="margin: 2px;"/></td>';
-                                                            if($i%4==0){
-                                                                $finaloutput .= '</tr><tr>';
+                                                            if (file_exists($dirtoalldata.'/'.$image)) {
+                                                                $finaloutput .= '<td style="width: 25%;"><img src="'.$dirtoalldata.'/'.$image.'" width="135" style="margin: 2px;"/></td>';
+                                                                if($i%4==0){
+                                                                    $finaloutput .= '</tr><tr>';
+                                                                }
+                                                                $i++;
                                                             }
-                                                            $i++;
                                                         }
                                                         $finaloutput .= '</tr></table>';
                                                     }
