@@ -12,6 +12,23 @@ use Spipu\Html2Pdf\Html2Pdf;
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 
+$dirtooriginalzipfile = 'upload';
+$dirtoallzipfiles = 'upload/firstunzip';
+$dirtoalldata = 'upload/firstunzip/allzipcontent';
+$dirtoallpdf = 'upload/allpdf';
+$dirtofinalzip = 'upload/ready';
+$dirtotemppdffiles = 'upload/allpdftemp';
+
+$rename = array();
+$rename['search'] = array('ä', 'ö', 'ü', 'ß', ' ');
+$rename['replace'] = array('ae', 'oe', 'ue', 'ss', '_');
+
+if(!file_exists($dirtoallpdf)){ mkdir($dirtoallpdf); }
+if(!file_exists($dirtofinalzip)){ mkdir($dirtofinalzip); }
+if(!file_exists($dirtotemppdffiles)){ mkdir($dirtotemppdffiles); }
+if(!file_exists($dirtoallzipfiles)){ mkdir($dirtoallzipfiles); }
+if(!file_exists($dirtoalldata)){ mkdir($dirtoalldata); }
+
 function error($error = ''){
     if(!empty($error)){
         die('Ein Fehler ist aufgetreten: '.$error);
@@ -52,22 +69,7 @@ function deldir($dir, $deletedir = true){
     }
 }
 
-$dirtooriginalzipfile = 'upload';
-$dirtoallzipfiles = 'upload/firstunzip';
-$dirtoalldata = 'upload/firstunzip/allzipcontent';
-$dirtoallpdf = 'upload/allpdf';
-$dirtofinalzip = 'upload/ready';
-$dirtotemppdffiles = 'upload/allpdftemp';
 
-$rename = array();
-$rename['search'] = array('ä', 'ö', 'ü', 'ß', ' ');
-$rename['replace'] = array('ae', 'oe', 'ue', 'ss', '_');
-
-if(!file_exists($dirtoallpdf)){ mkdir($dirtoallpdf); }
-if(!file_exists($dirtofinalzip)){ mkdir($dirtofinalzip); }
-if(!file_exists($dirtotemppdffiles)){ mkdir($dirtotemppdffiles); }
-if(!file_exists($dirtoallzipfiles)){ mkdir($dirtoallzipfiles); }
-if(!file_exists($dirtoalldata)){ mkdir($dirtoalldata); }
 $alldata = scandir($dirtoalldata);
 $allzips = scandir($dirtooriginalzipfile);
 $allzipfiles = scandir($dirtoallzipfiles);
