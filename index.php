@@ -1,4 +1,5 @@
 <?php
+die("test2");
 set_time_limit(0);
 ini_set('allow_url_fopen', 'on');
 ini_set('memory_limit', '-1');
