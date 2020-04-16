@@ -1,6 +1,6 @@
 # MyStuff2PDF
 
-## Bitte beachte: Dieses Projekt wurde durch [MyStuff2Docx](https://github.com/KarlKeu00/MyStuff2Docx) ersetzt und wird nicht mehr weiterentwickelt.
+## Please note: This project has been replaced by [MyStuff2Docx](https://github.com/KarlKeu00/MyStuff2Docx) and is no longer under development.
 
 <br/>
 
